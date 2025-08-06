@@ -1,0 +1,157 @@
+/* Red + grey background theme with watermark */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #d32f2f, #616161);
+  color: white;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Watermark background text */
+body::before {
+  content: "Quest Academy";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.03);
+  z-index: 0;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* Titles and Headings */
+.title {
+  text-align: center;
+  font-size: 32px;
+  margin-top: 30px;
+  animation: fadeIn 1.5s ease-in;
+}
+
+.intro {
+  text-align: center;
+  margin: 20px 40px;
+  font-weight: normal;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: slideIn 1s ease-in-out;
+}
+
+.courses-heading {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.course-list {
+  list-style: square;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+.video-button {
+  text-align: center;
+  margin: 20px;
+}
+
+.video-button button {
+  padding: 12px 25px;
+  background-color: #b71c1c;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.video-button button:hover {
+  background-color: #8e0000;
+}
+
+.form-heading {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 28px;
+  animation: floatUp 1s ease;
+}
+
+/* Floating form box */
+form {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+  animation: floatForm 2s ease forwards;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[list],
+form input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: #f8f8f8;
+  color: #333;
+}
+
+/* Submit Button Styling */
+.submit-btn {
+  background-color: #d50000;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #9b0000;
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #f0f0f0;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideIn {
+  from {transform: translateY(30px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes floatUp {
+  from {transform: translateY(40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes floatForm {
+  from {transform: translateY(50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
