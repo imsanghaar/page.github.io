@@ -10,7 +10,7 @@ body {
 
 /* Watermark background text */
 body::before {
-  content: "Quest Academy";
+  content: "Degree College Ghotki";
   position: absolute;
   top: 30%;
   left: 50%;
