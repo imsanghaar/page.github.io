@@ -39,4 +39,3 @@ document.getElementById("admissionForm").addEventListener("submit", function(e) 
 document.getElementById("watchVideoBtn").addEventListener("click", function () {
   window.open('https://youtu.be/FWfu9LSZ8lQ?si=6tFH0xkuXqOSAhOj', '_blank');
 });
-
