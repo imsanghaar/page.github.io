@@ -2,85 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Quest Academy Admission Form</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Admission Form</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 class="title">Welcome to Degree College Ghotki</h1>
+  <h1 class="title">Degree College Ghotki</h1>
+  <p class="intro">Welcome to the Department of Admissions. Fill the form below to secure your admission in the programs listed.</p>
 
-  <p class="intro">
-    Ghotki Boys College is one of the leading colleges across Northern Sindh.
-    It has highly qualified faculty that teaches students using a wide range of
-    techniques including AV tools. The college has a wide playground, assembly
-    area, and spacious rooms and labs with ventilation.
-  </p>
-
-  <h3 class="courses-heading">Offered Courses</h3>
+  <h3 class="courses-heading">Courses Offered</h3>
   <ul class="course-list">
     <li>Pre-Medical</li>
     <li>Pre-Engineering</li>
-    <li>Commerce</li>
     <li>Computer Science</li>
+    <li>Commerce</li>
+    <li>Arts</li>
   </ul>
 
   <div class="video-button">
-    <button onclick="window.location.href='https://www.youtube.com/watch?v=zFZrkCIc2Oc&list=PPSV'">
-      🎬 Watch College Video
-    </button>
+    <button onclick="alert('Demo video coming soon!')">Watch Introduction Video</button>
+  </div>
+
+  <!-- Suitcase Man Section -->
+  <div class="suitcase-container" id="suitcaseContainer">
+    <img src="suitcaseman.png" alt="Suitcase Man" class="suitcase-img" onclick="throwSuitcase()">
   </div>
 
   <h2 class="form-heading">Admission Form</h2>
-
   <form id="admissionForm">
-    <input type="text" placeholder="Full Name" name="full_name" required>
-    <input type="text" placeholder="Father's Name" name="father_name" required>
-    <input type="text" placeholder="Caste" name="caste">
-    <input type="text" placeholder="Last School" name="last_school">
-
-    <input name="board" list="boards" placeholder="Board" required>
-    <datalist id="boards">
-      <option value="BISE Larkano">
-      <option value="BISE Sukkur">
-      <option value="BISE Karachi">
-      <option value="BISE Nawab Shah">
-      <option value="BISE Hyderabad">
-      <option value="BISE Mirpurkhas">
-      <option value="Aga Khan">
-      <option value="FBISE Islamabad">
-    </datalist>
-
-    <input type="text" placeholder="Obtained Marks" name="obtained_marks">
-    
-    <input name="grades" list="grades" placeholder="Grades">
-    <datalist id="grades">
-      <option value="A1">
-      <option value="A">
-      <option value="B">
-      <option value="C">
-      <option value="D">
-      <option value="E">
-    </datalist>
-
-    <input type="email" placeholder="Email" name="email" required>
-
-    <!-- Photo Upload -->
-    <input type="file" name="photo" accept="image/*" required>
-
-    <!-- Submit Button -->
+    <input type="text" placeholder="Full Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="text" placeholder="CNIC / B-Form" required>
+    <input type="file" accept="image/*" required>
     <button type="submit" class="submit-btn">Submit Form</button>
   </form>
 
-  <footer>&copy; 2025 | All rights reserved.
-  </footer>
+  <!-- Floating Chatbot -->
+  <div class="chatbot">
+    <div class="chatbot-icon" onclick="toggleChat()">💬</div>
+    <div class="chat-window" id="chatWindow">
+      <h4>AI Assistant</h4>
+      <div id="chatMessages">
+        <p><strong>AI:</strong> Hello! Ask me anything about the form.</p>
+      </div>
+      <input type="text" id="userInput" placeholder="Your question..." onkeypress="if(event.key==='Enter') sendMessage()">
+    </div>
+  </div>
 
-  <script>
-    // Note: HTML/JS cannot send emails directly without a backend!
-    // Use Formspree, Google Apps Script, or Backend server
-    document.getElementById("admissionForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      alert("Form submitted! (Set up backend/email to receive notifications)");
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
